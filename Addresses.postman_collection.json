@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "3fb4384a-d167-44ac-8877-f9c85a8fdc90",
+		"name": "Lob Addresses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/addresses",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"line1\": \"Massachusetts Hall\",\n    \"city\": \"Cambridge\",\n    \"state\": \"MA\",\n    \"zip\": \"02138\"\n  },\n  {\n    \"line1\": \"3400 N. Charles St.\",\n    \"city\": \"Baltimore\",\n    \"state\": \"MD\",\n    \"zip\": \"21218\"\n  },\n  {\n    \"line1\": \"Roosevelt Way NE\",\n    \"city\": \"Seattle\",\n    \"state\": \"WA\",\n    \"zip\": \"98115\"\n  },\n  {\n    \"line1\": \"1600 Holloway Ave\",\n    \"city\": \"San Francisco\",\n    \"state\": \"CA\",\n    \"zip\": \"94132\"\n  },\n  {\n    \"line1\": \"1600 Holloway Ave\",\n    \"line2\": \"Suite 10\",\n    \"city\": \"San Francisco\",\n    \"state\": \"CA\",\n    \"zip\": \"94132\"\n  },\n  {\n    \"line1\": \"1600 Holloway Ave\",\n    \"line2\": \"Suite 20\",\n    \"city\": \"San Francisco\",\n    \"state\": \"CA\",\n    \"zip\": \"94132\"\n  },\n  {\n    \"line1\": \"500 S State St\",\n    \"city\": \"Ann Arbor\",\n    \"state\": \"MI\",\n    \"zip\": \"48109\"\n  },\n  {\n    \"line1\": \"185 Berry St\",\n    \"line2\": \"Suite 6100\",\n    \"city\": \"San Francisco\",\n    \"state\": \"CA\",\n    \"zip\": \"94107\"\n  }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1.0/addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"line1\": \"Roosevelt Way NE\",\n    \"city\": \"Seattle\",\n    \"state\": \"WA\",\n    \"zip\": \"98115\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1.0/address",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/addresses?text={string}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1.0/addresses/match?text=San",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"addresses",
+						"match"
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "San"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/addresses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1.0/addresses?startRecord=4&endRecord=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"addresses"
+					],
+					"query": [
+						{
+							"key": "startRecord",
+							"value": "4"
+						},
+						{
+							"key": "endRecord",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/addresses/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1.0/addresses/64bb07b334cd467cf9fe11fcb81e8943",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"addresses",
+						"64bb07b334cd467cf9fe11fcb81e8943"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/addresses",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1.0/addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/addresses/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1.0/addresses/052cc523b2d902ce5ccfd12da25feca6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"addresses",
+						"052cc523b2d902ce5ccfd12da25feca6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/addresses/{id}",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"IL\",\n    \"line1\": \"3401 N. Charles St.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1.0/addresses/37c340304131c8f8d9b9a3001368c3f7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"addresses",
+						"37c340304131c8f8d9b9a3001368c3f7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses/count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1.0/addresses/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1.0",
+						"addresses",
+						"count"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
